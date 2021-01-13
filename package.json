@@ -19,5 +19,8 @@
   "homepage": "https://github.com/alexanderjaye/tuck-app#readme",
   "devDependencies": {
     "commitizen": "^4.2.2"
+  },
+  "dependencies": {
+    "express-session": "^1.17.1"
   }
 }

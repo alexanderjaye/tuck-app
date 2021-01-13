@@ -1,12 +1,11 @@
-import "reflect-metadata";
 import {createConnection} from "typeorm";
 import * as express from "express";
 import * as session from "express-session";
-import {Request, Response} from "express";
+import {Request, Response, NextFunction, UserController } from "express";
 import {Routes} from "./router";
-import {User} from "./model/User";
+// import {User} from "./model/User";
 
-createConnection().then(async connection => {
+createConnection().then(() => {
 
     // create express app
     const app = express();
@@ -15,12 +14,12 @@ createConnection().then(async connection => {
     app.use(express.json());
 
     // create session for auth
-    app.use(session());
+    // app.use(session());
 
     // register express routes from defined application routes
     Routes.forEach(route => {
-        (app as any)[route.method](route.route, (req: Request, res: Response, next: Function) => {
-            const result = (new (route.controller as any))[route.action](req, res, next);
+        app[route.method](route.route, (req: Request, res: Response, next: NextFunction) => {
+            const result = (new (route.controller as UserController))[route.action](req, res, next);
             if (result instanceof Promise) {
                 result.then(result => result !== null && result !== undefined ? res.send(result) : undefined);
 
@@ -34,20 +33,10 @@ createConnection().then(async connection => {
     // ...
 
     // start express server
-    app.listen(3000);
+    app.listen(3000, () => {
+        console.log("Express server has started on port 3000 -> http://localhost:3000/users");
+        console.log("Connected to Postgres Database");
 
-    // insert new users for test
-    await connection.manager.save(connection.manager.create(User, {
-        firstName: "Timber",
-        lastName: "Saw",
-        age: 27
-    }));
-    await connection.manager.save(connection.manager.create(User, {
-        firstName: "Phantom",
-        lastName: "Assassin",
-        age: 24
-    }));
-
-    console.log("Express server has started on port 3000. Open http://localhost:3000/users to see results");
+    });
 
 }).catch(error => console.log(error));

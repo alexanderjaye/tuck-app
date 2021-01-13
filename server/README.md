@@ -1,4 +1,4 @@
-# Awesome Project Build with TypeORM
+# Tuck Server
 
 Steps to run this project:
 
