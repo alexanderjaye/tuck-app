@@ -1,0 +1,20 @@
+{
+  "name": "tuck-app",
+  "version": "1.0.0",
+  "description": "Tuck - full stack app for open source community recipes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexanderjaye/tuck-app.git"
+  },
+  "keywords": [],
+  "author": "AlexanderJaye",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alexanderjaye/tuck-app/issues"
+  },
+  "homepage": "https://github.com/alexanderjaye/tuck-app#readme"
+}
