@@ -1,16 +1,21 @@
 import "reflect-metadata";
 import {createConnection} from "typeorm";
 import * as express from "express";
-import * as bodyParser from "body-parser";
+import * as session from "express-session";
 import {Request, Response} from "express";
-import {Routes} from "./routes";
-import {User} from "./entity/User";
+import {Routes} from "./router";
+import {User} from "./model/User";
 
 createConnection().then(async connection => {
 
     // create express app
     const app = express();
-    app.use(bodyParser.json());
+
+    // express middleware
+    app.use(express.json());
+
+    // create session for auth
+    app.use(session());
 
     // register express routes from defined application routes
     Routes.forEach(route => {
