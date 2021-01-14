@@ -1,0 +1,17 @@
+@import "./_palette.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+	background-color: $p-green;
+	color: $p-light;
+	margin: 0;
+  padding: 0;
+  width: 100vw;
+  min-height: 100vh;
+  box-sizing: border-box;
+  font-family: 'Philosopher', sans-serif;
+}
+

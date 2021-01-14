@@ -1,0 +1,10 @@
+@mixin setPositionTopLeft ($top, $left) {
+  top: $top;
+  left: $left; 
+}
+
+@mixin flex () {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
