@@ -1,4 +1,4 @@
-import {Entity, PrimaryGeneratedColumn, Column, PrimaryColumn, ManyToOne} from "typeorm";
+import {Entity, PrimaryColumn, ManyToOne} from "typeorm";
 import { Recipes } from "./Recipes";
 import { User } from "./User";
 import { Variants } from "./Variants";
