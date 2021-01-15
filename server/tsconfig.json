@@ -18,8 +18,9 @@
       "strictNullChecks": true,
       "strictFunctionTypes": true,
       "noImplicitThis": true,
-      "resolveJsonModule": true
+      "resolveJsonModule": true,
+      "noImplicitAny": false
    },
    "exclude": ["node_modules"],
-   "include": ["./src"]
+   "include": ["./src", "src/model/entities/Instructions/.ts"]
 }

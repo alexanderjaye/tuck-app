@@ -9,7 +9,7 @@ import {createConnection} from "typeorm";
 import * as express from "express";
 import * as session from "express-session";
 import {Request, Response, NextFunction, UserController } from "express";
-import {Routes} from "./router/router";
+import {Routes} from "./router/index.router";
 // import {User} from "./model/User";
 
 // set env variables
