@@ -1,5 +1,5 @@
 import {Entity, PrimaryGeneratedColumn, Column, OneToMany, ManyToOne} from "typeorm";
-import { User } from "./User";
+import { Users } from "./User";
 import { Variants } from "./Variants";
 
 @Entity()
@@ -13,7 +13,7 @@ export class Recipes {
   recipeName: string;
 
   @Column()
-  @ManyToOne(() => User, user => user.username)
+  @ManyToOne(() => Users, user => user.username)
   author: string;
 
 }

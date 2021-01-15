@@ -2,7 +2,7 @@ import {Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany} from "type
 import { Ingredients } from "./Ingredients";
 import { RecipeInstructions } from "./Instructions";
 import { Recipes } from "./Recipes";
-import { User } from "./User";
+import { Users } from "./User";
 
 @Entity()
 export class Variants {
@@ -18,7 +18,7 @@ export class Variants {
   @Column()
   variantName: string;
 
-  @ManyToOne(() => User, user => user.username)
+  @ManyToOne(() => Users, user => user.username)
   author: string;
 
   @Column()

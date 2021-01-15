@@ -4,7 +4,7 @@ import { Recipes } from "./Recipes";
 import { Variants } from "./Variants";
 
 @Entity()
-export class User {
+export class Users {
 
     @PrimaryGeneratedColumn()
     @OneToMany(() => Favourites, fav => fav._uid)

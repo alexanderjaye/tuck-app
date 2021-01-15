@@ -1,13 +1,13 @@
 import {Entity, PrimaryColumn, ManyToOne} from "typeorm";
 import { Recipes } from "./Recipes";
-import { User } from "./User";
+import { Users } from "./User";
 import { Variants } from "./Variants";
 
 @Entity()
 export class Favourites {
 
   @PrimaryColumn()
-  @ManyToOne(() => User, user => user._uid)
+  @ManyToOne(() => Users, user => user._uid)
   _uid: number;
 
   @ManyToOne(() => Recipes, recipe => recipe.recipeName)
