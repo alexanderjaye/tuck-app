@@ -7,13 +7,16 @@ import './Navbar.scss';
 
 
 export default function Navbar() {
+  const sidebarToggle = false
+
   return (
     <div>
       <div>
         <NavbarTop/>
+        <div className="nav-spacer-util"></div>
       </div>
       <div>
-        <NavbarCollapse/>
+        {sidebarToggle && <NavbarCollapse/>}
       </div>
     </div>
   )

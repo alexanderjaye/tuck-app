@@ -1,0 +1,50 @@
+@import "../../../scss-utils/global";
+@import "../../../scss-utils/palette";
+
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $p-light;
+    color: $p-green;
+    border-radius: 5px;
+
+    width: 70%;
+    padding: 18px 5%;
+    margin-top: 20px;
+  }
+
+  h2 {
+    margin: 0;
+    padding: 0;
+  }
+
+  form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .input-container {
+    width: 90%;
+    max-width: 500px;
+    padding: 18px 0px;
+  }
+
+  .input {
+    font-size: 1.1rem;
+    padding: 20px;
+    width: 90%;
+    color: $p-green;
+    font-family: 'Philosopher', sans-serif;
+  }
+
+  
+}
