@@ -1,15 +1,18 @@
-import {Entity, PrimaryGeneratedColumn, Column} from "typeorm";
+import {Entity, PrimaryGeneratedColumn, Column, ManyToOne, PrimaryColumn} from "typeorm";
+import { Variants } from "./Variants";
 
 @Entity()
 export class RecipeInstructions {
 
-  recipe_id: number; // int
+  @ManyToOne(() => Variants, variant => variant._vid)
+  _vid: number;
 
-  variant_id: number; // int
+  @Column()
+  instruction_type: string;
 
-  method_type: string;
+  @Column()
+  instruction_num: number;
 
-  method_num: number; // int
-
-  method: string
+  @PrimaryColumn()
+  instruction: string
 }

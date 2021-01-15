@@ -1,18 +1,23 @@
-import {Entity, PrimaryGeneratedColumn, Column} from "typeorm";
+import {Entity, PrimaryGeneratedColumn, Column, OneToMany} from "typeorm";
+import { Favourites } from "./Favourites";
+import { Recipes } from "./Recipes";
+import { Variants } from "./Variants";
 
 @Entity()
 export class User {
 
     @PrimaryGeneratedColumn()
+    @OneToMany(() => Favourites, fav => fav._uid)
+    @OneToMany(() => Favourites, fav => fav._uid)
     _uid: number;
 
-    @Column()
-    name: string;
+    @OneToMany(() => Recipes, recipes => recipes.author)
+    @OneToMany(() => Variants, variant => variant.author)
+    username: string;
 
     @Column()
     email: number;
 
     @Column()
     password: string;
-
 }

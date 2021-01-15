@@ -1,18 +1,19 @@
-import {Entity, PrimaryGeneratedColumn, Column} from "typeorm";
+import {Entity, PrimaryGeneratedColumn, Column, OneToMany, ManyToOne} from "typeorm";
+import { User } from "./User";
+import { Variants } from "./Variants";
 
 @Entity()
 export class Recipes {
 
   @PrimaryGeneratedColumn()
+  @OneToMany(() => Variants, variant => variant._rid)
   _rid: number;
 
   @Column()
   recipeName: string;
 
   @Column()
+  @ManyToOne(() => User, user => user.username)
   author: string;
-
-  @Column()
-  views: number;
 
 }
