@@ -15,6 +15,7 @@ import {Routes} from "./router/index.router";
 // set env variables
 const SECRET = process.env.SECRET || 'La Fleur Que Tu Mavais Jetee';
 const SECURE = process.env.SECURE || false;
+const PORT = process.env.PORT || 3001;
 
 createConnection().then(() => {
 
@@ -55,7 +56,7 @@ createConnection().then(() => {
     // ...
 
     // start express server
-    app.listen(3000, () => {
+    app.listen(PORT, () => {
         console.log("Express server has started on port 3000 -> http://localhost:3000/users");
         console.log("Connected to Postgres Database");
     });
