@@ -1,6 +1,7 @@
 import { TextField } from '@material-ui/core';
 import { Field, Formik, FieldAttributes, useField } from 'formik'
 import React from 'react'
+import './register.scss'
 
 // Custom edit of material ui "TextField" icon
 const MyTextField: React.FC<FieldAttributes<{}>> = ({
@@ -21,7 +22,7 @@ const MyTextField: React.FC<FieldAttributes<{}>> = ({
   );
 };
 
-export default function LoginForm() {
+const RegisterForm: React.FC = () => {
   return (
     <div className="register-container">
       <div className="register">
@@ -40,6 +41,12 @@ export default function LoginForm() {
           {({ values, handleChange, handleBlur, handleSubmit}) => (
           <form onSubmit={handleSubmit}>
             <Field 
+              name="username" 
+              type="input" 
+              as={MyTextField}
+              placeholder="MyUserName"
+            />
+            <Field 
               name="email" 
               type="input" 
               as={MyTextField}
@@ -51,6 +58,12 @@ export default function LoginForm() {
               as={MyTextField}
               placeholder="Password"
             />
+            <Field
+              name="password"
+              type="submit"
+
+              value="Submit"
+            ></Field>
           </form>
           )}
         </Formik>
@@ -58,3 +71,5 @@ export default function LoginForm() {
     </div>
   )
 }
+
+export default RegisterForm;

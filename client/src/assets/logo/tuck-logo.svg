@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg width="100%" height="100%" viewBox="0 0 380 180" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-    <g transform="matrix(0.47853,0,0,1.30987,37.0488,-214.824)">
+    <g transform="matrix(0.47853,0,0,1.30987,26.689,-214.824)">
         <rect x="232.134" y="178.09" width="338.122" height="12.74" style="fill:rgb(111,116,8);"/>
     </g>
-    <g transform="matrix(0.613368,0,0,0.613368,193.065,-117.002)">
+    <g transform="matrix(0.613368,0,0,0.613368,214.457,-117.002)">
         <text x="20.197px" y="460.966px" style="font-family:'DevanagariSangamMN', 'Devanagari Sangam MN';font-size:270.641px;fill:rgb(234,225,0);">K</text>
     </g>
-    <g transform="matrix(0.550091,0,0,0.58406,125.999,-106.194)">
+    <g transform="matrix(0.550091,0,0,0.58406,135.127,-106.194)">
         <text x="20.197px" y="460.966px" style="font-family:'DevanagariSangamMN', 'Devanagari Sangam MN';font-size:270.641px;fill:rgb(111,116,8);">C</text>
     </g>
-    <g transform="matrix(0.595855,0,0,0.595855,48.017,-111.631)">
+    <g transform="matrix(0.595855,0,0,0.595855,51.3242,-111.631)">
         <text x="20.197px" y="460.966px" style="font-family:'DevanagariSangamMN', 'Devanagari Sangam MN';font-size:270.641px;fill:rgb(234,225,0);">U</text>
     </g>
-    <g transform="matrix(1.61585,0,0,1.5482,-36.0515,-522.286)">
+    <g transform="matrix(1.61585,0,0,1.5482,-46.4112,-522.286)">
         <clipPath id="_clip1">
             <rect x="-7.19" y="337.351" width="152.921" height="107.394"/>
         </clipPath>
         <g clip-path="url(#_clip1)">
-            <g transform="matrix(0.618871,-0,-0,0.645912,22.3112,337.351)">
-                <use xlink:href="#_Image2" x="10.72" y="18.454" width="138.582px" height="147.833px" transform="matrix(0.99699,0,0,0.998873,0,0)"/>
+            <g transform="matrix(0.618871,-0,-0,0.645912,28.7226,337.351)">
+                <use xlink:href="#_Image2" x="0.329" y="18.454" width="138.582px" height="147.833px" transform="matrix(0.99699,0,0,0.998873,0,0)"/>
             </g>
         </g>
     </g>
-    <g transform="matrix(1,0,0,1,-130.647,-159.166)">
+    <g transform="matrix(1,0,0,1,-124.519,-158.605)">
         <g transform="matrix(1,0,0,1,-39.1592,-0.155878)">
             <g>
                 <g id="lemons-clipart-svg" transform="matrix(0.0563592,0,0,0.0563592,429.518,161.181)">
