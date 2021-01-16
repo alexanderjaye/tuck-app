@@ -1,14 +1,16 @@
-import {Entity, Column, ManyToOne, PrimaryColumn} from "typeorm";
+import {Entity, Column, ManyToOne, PrimaryColumn, PrimaryGeneratedColumn} from "typeorm";
 import { Variants } from "./Variants";
 
 @Entity()
 export class Ingredients {
+  @PrimaryGeneratedColumn()
+  ing_id: number;
 
   @ManyToOne(() => Variants, variant => variant._vid)
   _vid: number;
 
-  @PrimaryColumn()
-  ingredient: string;
+  @Column()
+  ingredientName: string;
 
   @Column()
   ingredientType: string;

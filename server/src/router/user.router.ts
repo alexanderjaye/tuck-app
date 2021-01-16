@@ -10,20 +10,26 @@ export const userRoutes: Route<UserController>[] = [
     }, 
     {
         method: "get",
-        route: "/users/:id",
+        route: "/users/:_uid",
         controller: UserController,
-        action: "one"
+        action: "getUser"
     }, 
     {
         method: "post",
         route: "/users",
         controller: UserController,
-        action: "save"
+        action: "registerUser"
+    },
+    {
+        method: "put",
+        route: "/users/:_uid",
+        controller: UserController,
+        action: "updateUsername"
     }, 
     {
         method: "delete",
         route: "/users/:id",
         controller: UserController,
-        action: "remove"
+        action: "deleteUser"
     }
-]
+];

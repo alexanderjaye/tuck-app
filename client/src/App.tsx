@@ -9,11 +9,12 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar/>
-      <Route exact path="/" component={Login}/>
-      <Route path="/login" component={Login}/>
-      <Route path="/register" component={Register}/>
-      <Route dashboard="/dashboard" component={Dashboard}/>
-      
+      <div className="main-window">
+        <Route exact path="/" component={Login}/>
+        <Route path="/login" component={Login}/>
+        <Route path="/register" component={Register}/>
+        <Route dashboard="/dashboard" component={Dashboard}/>
+      </div>
     </BrowserRouter>
   );
 }

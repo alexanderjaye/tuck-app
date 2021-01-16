@@ -9,7 +9,7 @@ export class Recipes {
   @OneToMany(() => Variants, variant => variant._rid)
   _rid: number;
 
-  @Column()
+  @OneToMany(() => Variants, variant => variant.recipeName)
   recipeName: string;
 
   @Column()

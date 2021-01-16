@@ -1,6 +1,10 @@
 // p for primary, a for alternate
-$p-green: #021a0d; // 022110
-$p-light: #e9e7db;
+$p-green: #6F7408; // 022110
+$p-light: rgb(234,233,223);
+$p-slate-grey: #6e7b87;
 $p-lemon: #eae100;
 $p-dark: #362917;
+$p-brown: #977035;
+
+$alt-light: lighten($p-light, 10%);
 

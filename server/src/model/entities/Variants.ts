@@ -18,6 +18,9 @@ export class Variants {
   @Column()
   variantName: string;
 
+  @ManyToOne(() => Recipes, recipe => recipe.recipeName)
+  recipeName: string;
+
   @ManyToOne(() => Users, user => user.username)
   author: string;
 
@@ -26,4 +29,13 @@ export class Variants {
 
   @Column()
   blurb: string;
+
+  @Column()
+  isVegetarian: boolean;
+
+  @Column()
+  isVegan: boolean;
+
+  @Column()
+  isGlutenFree: boolean;
 }

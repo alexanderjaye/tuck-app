@@ -8,7 +8,7 @@ export class IngredientsController {
   private userRepository = getRepository(Ingredients);
 
   /**GET**/
-  async getIngredientsByRecipe(req: Request) {
+  async getIngredientsByVariant(req: Request) {
     return req.body;
   }
 
@@ -18,17 +18,14 @@ export class IngredientsController {
   }
 
   /**POST**/
-  async addIngredientsForRecipe(req: Request) {
-    return req.body;
-  }
 
   /**PUT**/
-  async editIngredients(req: Request) {
+  async editIngredientsForVariant(req: Request) {
     return req.body;
   }
 
   /**DELETE**/
-  async deleteIngredientsByRecipe(req: Request) {
+  async deleteIngredientsByVariant(req: Request) {
     return req.body;
   }
 

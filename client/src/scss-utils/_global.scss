@@ -5,14 +5,20 @@
 }
 
 body {
-	background-color: $p-green;
-	color: $p-light;
+  position: relative;
+	background-color: $p-light;
+	color: $p-dark;
 	margin: 0;
   padding: 0;
   width: 100vw;
   min-height: 100vh;
   box-sizing: border-box;
-  font-family: 'Philosopher', sans-serif;
+  font-family: 'Quando', serif;
 }
 
 $nav-height: 72px;
+
+.main-window {
+  position: relative;
+  top: $nav-height;
+}

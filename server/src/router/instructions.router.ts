@@ -1,31 +1,29 @@
 import { RecipeInstructionsController } from "../controller/instructions.contoller";
 import { Route } from "./Route.interface";
 
-export const instructionRoutes: Route<RecipeInstructionsController>[] = [
-  //TODO Edit all routes -> check against markup
-
+export const instructionsRoutes: Route<RecipeInstructionsController>[] = [
   {
-      method: "get",
-      route: "/users",
-      controller: RecipeInstructionsController,
-      action: "all"
+    method: "get",
+    route: "/instructions/:_vid",
+    controller: RecipeInstructionsController,
+    action: "getInstructionsByVariant"
   }, 
   {
-      method: "get",
-      route: "/users/:id",
-      controller: RecipeInstructionsController,
-      action: "one"
+    method: "post",
+    route: "/instructions",
+    controller: RecipeInstructionsController,
+    action: "addInstructionsForVariant"
   }, 
   {
-      method: "post",
-      route: "/users",
-      controller: RecipeInstructionsController,
-      action: "save"
+    method: "post",
+    route: "/instructions/:_vid",
+    controller: RecipeInstructionsController,
+    action: "editVariantInstructions"
   }, 
   {
-      method: "delete",
-      route: "/users/:id",
-      controller: RecipeInstructionsController,
-      action: "remove"
+    method: "delete",
+    route: "/users/:_vid",
+    controller: RecipeInstructionsController,
+    action: "deleteInstructionsByVariant"
   }
 ];

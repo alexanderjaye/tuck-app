@@ -18,6 +18,8 @@
 
 ## RECIPES
 
+'/recipes
+
 - GET - `getAll()` --> return all Recipes
 - GET - `getUserRecipes()` --> return Recipes by user
 - GET - `getOneRecipe()` --> return recipe
@@ -26,22 +28,23 @@
 
 ## VARIANTS
 
-- GET - `getVariantbyName()` --> return variant by name
-- GET - `getVariantsbyRecipe` --> return variant
+- GET - `getVariantByName()` --> return variant by name
+- GET - `getVariantsByRecipe` --> return variant
 - POST - `addVariant()` -->
 - PUT - `updateVariant()` -->
 - DELETE - `deleteVariant()` -->
 
 ## INGREDIENTS
 
-- GET - `getIngredientsByRecipe()` -->
-- POST - `addIngredientsForRecipe()` -->
-- PUT - `editIngredients()` -->
-- DELETE - `deleteIngredientsByRecipe()` -->
+- GET - `getIngredientsByVariant()` -->
+<!-- - POST - `addIngredientsForVariant()` --> -->
+- GET - `getRecipesByIngredient()`
+- PUT - `editIngredientsForVariant()` -->
+- DELETE - `deleteIngredientsByVariant()` -->
 
 ## RECIPEINSTRUCTIONS
 
-- GET - `getInstructionsByRecipe` -->
-- POST - `addInstructionsForRecipe()` -->
-- PUT - `editRecipeInstructions()` -->
-- DELETE - `deleteIngredientByRecipe()` -->
+- GET - `getInstructionsByVariant` -->
+- POST - `addInstructionsForVariant()` -->
+- PUT - `editVariantInstructions()` -->
+- DELETE - `deleteInstructionsByVariant()` -->

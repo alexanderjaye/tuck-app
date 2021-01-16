@@ -1,31 +1,37 @@
 import { RecipesController } from "../controller/recipes.controller";
 import { Route } from "./Route.interface";
 
-export const userRoutes: Route<RecipesController>[] = [
+export const recipesRoutes: Route<RecipesController>[] = [
   //TODO Edit all routes -> check against markup
 
   {
       method: "get",
-      route: "/users",
+      route: "/recipes",
       controller: RecipesController,
-      action: "all"
+      action: "getAll"
   }, 
   {
       method: "get",
-      route: "/users/:id",
+      route: "/recipes/:_uid",
       controller: RecipesController,
-      action: "one"
-  }, 
+      action: "getUserRecipes"
+  },
+  {
+    method: "get",
+    route: "/recipes/:_rid",
+    controller: RecipesController,
+    action: "getOneRecipe"
+},  
   {
       method: "post",
-      route: "/users",
+      route: "/recipes",
       controller: RecipesController,
-      action: "save"
+      action: "addOneRecipe"
   }, 
   {
       method: "delete",
       route: "/users/:id",
       controller: RecipesController,
-      action: "remove"
+      action: "deleteOneRecipe"
   }
 ];
