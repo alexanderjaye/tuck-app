@@ -19,7 +19,13 @@ export const instructionsRoutes: Route<RecipeInstructionsController>[] = [
     route: "/instructions/:_vid",
     controller: RecipeInstructionsController,
     action: "editVariantInstructions"
-  }, 
+  },
+  {
+    method: "delete",
+    route: "/users/:_vid/:ingredientNum",
+    controller: RecipeInstructionsController,
+    action: "deleteInstructionByVariant"
+  },
   {
     method: "delete",
     route: "/users/:_vid",

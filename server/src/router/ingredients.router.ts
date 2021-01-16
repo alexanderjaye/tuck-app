@@ -2,8 +2,6 @@ import { IngredientsController } from "../controller/ingredients.controller";
 import { Route } from "./Route.interface";
 
 export const ingredientsRoutes: Route<IngredientsController>[] = [
-  //TODO Edit all routes -> check against markup
-
   {
     method: "get",
     route: "/ingredients/:_vid",

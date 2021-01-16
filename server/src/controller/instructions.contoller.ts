@@ -8,26 +8,26 @@ export class RecipeInstructionsController {
   private userRepository = getRepository(RecipeInstructions);
 
   /**GET**/
-  async getInstructionsByRecipe(req: Request) {
+  async getInstructionsByVariant(req: Request) {
     return req.body;
   }
 
   /**POST**/
-  async addInstructionsForRecipe(req: Request) {
+  async addInstructionsForVariant(req: Request) {
     return req.body;
   }
 
   /**PUT**/
-  async editInstructionForRecipe(req: Request) {
+  async editInstructionForVariant(req: Request) {
     return req.body;
   }
 
   /**DELETE**/
-  async deleteIngredientByRecipe(req: Request) {
+  async deleteInstructionsByVariant(req: Request) {
     return req.body;
   }
 
-  async deleteIngredientsForRecipe(req: Request) {
+  async deleteInstructionByVariant(req: Request) {
     return req.body;
   }
 }
