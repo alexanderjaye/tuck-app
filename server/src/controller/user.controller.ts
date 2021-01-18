@@ -1,24 +1,26 @@
 import {getRepository} from "typeorm";
 import {NextFunction, Request, Response} from "express";
-import {User} from "../model/entities/User";
+import {Users} from "../model/entities/User";
 
 export class UserController {
 
-    private userRepository = getRepository(User);
+    private userRepository = getRepository(Users);
     
     //TODO -> REMOVE AFTER TESTING
-    async all(): Promise<User[]> {
+    async all(): Promise<Users[]> {
+        console.log('hello');
         return await this.userRepository.find();
     }
 
     /**GET**/
-    async getUser(req: Request): Promise<User | undefined> {
+    async getUser(req: Request): Promise<Users | undefined> {
         return this.userRepository.findOne(req.params.id);
     }
 
     /**POST**/
     async registerUser(req: Request) {
-        return req.body;
+        
+        const hello = await this.userRepository.save(req.body);
     }
 
     /**PUT**/

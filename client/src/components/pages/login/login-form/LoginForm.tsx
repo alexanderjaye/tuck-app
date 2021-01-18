@@ -1,6 +1,7 @@
 import { TextField } from '@material-ui/core';
 import { Field, Formik, FieldAttributes, useField } from 'formik'
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 // Custom edit of material ui "TextField" icon
 const MyTextField: React.FC<FieldAttributes<{}>> = ({
@@ -52,6 +53,13 @@ export default function LoginForm() {
           </form>
           )}
         </Formik>
+        <br></br>
+        <Link to="/register">
+          <h4>Sign Up Here</h4>
+        </Link>
+        <Link to="/register">
+          <h4>Recover Password</h4>
+        </Link>
       </div>
     </div>
   )

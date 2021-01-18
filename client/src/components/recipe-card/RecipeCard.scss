@@ -1,0 +1,30 @@
+@import '../../scss-utils/palette';
+
+.recipe-card-sm {
+  max-width: 200px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: $p-dark;
+  box-shadow: -5px -5px $p-lemon;
+  margin: 20px;
+
+  &:nth-child(2) {
+    box-shadow: -8px -8px $p-green;
+  }
+
+  img {
+    width: 200px;
+    max-height: 120px;
+  }
+
+  .info {
+    background-color: $alt-light;
+    padding: 5px;
+  }
+
+  h3 {
+    margin: 0;
+    color: $tag-color;
+    font-size: 0.8rem;
+  }
+}

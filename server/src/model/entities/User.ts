@@ -5,18 +5,15 @@ import { Variants } from "./Variants";
 
 @Entity()
 export class Users {
+//TODO -> migrate to OAuth
+    @PrimaryGeneratedColumn('uuid')
+    _uid: string;
 
-    @PrimaryGeneratedColumn()
-    @OneToMany(() => Favourites, fav => fav._uid)
-    @OneToMany(() => Favourites, fav => fav._uid)
-    _uid: number;
-
-    @OneToMany(() => Recipes, recipes => recipes.author)
-    @OneToMany(() => Variants, variant => variant.author)
+    @Column()
     username: string;
 
     @Column()
-    email: number;
+    email: string;
 
     @Column()
     password: string;

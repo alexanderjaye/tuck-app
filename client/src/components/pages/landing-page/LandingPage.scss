@@ -1,0 +1,59 @@
+@import '../../../scss-utils/palette';
+@import '../../../scss-utils/mixins';
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  .advert {
+    display: flex;
+    flex-direction: column;
+    margin: 3% 5% 3% 8%;
+  }
+
+  .lg-bg-tree {
+    z-index: -1;
+    position: absolute;
+    opacity: 4%;
+    width: 70%;
+    max-width: 800px;
+    left: -200px;
+  }
+
+  .logo {
+    align-self: center;
+    width: 80%;
+    height: 300px;
+  }
+
+  h1 {
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+  }
+
+  .login {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .card {
+    background-color: transparentize($alt-light, $amount: 0.6);
+  }
+
+}
+
+@media only screen and (min-width: 992px) {
+  .hero { 
+    grid-template-columns: 2fr 1fr;
+
+    img {
+      align-self: flex-start;
+      width: 800px;
+    }
+  
+    h1 {
+      font-size: 2rem;
+    }
+  }
+  
+}

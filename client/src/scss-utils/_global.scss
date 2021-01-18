@@ -1,3 +1,5 @@
+// Note: The design is mobile-first
+
 @import "./_palette.scss";
 
 * {
@@ -21,4 +23,24 @@ $nav-height: 72px;
 .main-window {
   position: relative;
   top: $nav-height;
+  padding-bottom: 30px;
+  
+  .bg-vine {
+    z-index: -1;
+    width: 300px;
+    position: absolute;
+    right: 0px;
+    opacity: 10%;
+    filter: blur(3px);
+  }
+}
+
+@media only screen and (min-width: 996px) {
+  .main-window {
+    
+    .bg-vine {
+      width: 500px;
+      
+    }
+  }
 }
