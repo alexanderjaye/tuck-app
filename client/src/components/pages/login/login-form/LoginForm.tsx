@@ -1,58 +1,76 @@
-import { TextField } from '@material-ui/core';
-import { Field, Formik, FieldAttributes, useField } from 'formik'
-import React from 'react'
+import React, { useContext, useState } from 'react'
+import { FaArrowRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../../contexts/Auth';
+import * as apiService from '../../../../services/Apiservice'
 
-// Custom edit of material ui "TextField" icon
-const MyTextField: React.FC<FieldAttributes<{}>> = ({
-  placeholder,
-  ...props
-}) => {
-  const [field, meta] = useField<{}>(props);
-  const errorText = meta.error && meta.touched ? meta.error : "";
-  return (
-    <TextField
-      placeholder={placeholder}
-      {...field}
-      inputProps={{ className:"input"}}
-      classes={{ root: "input-container"}}
-      helperText={errorText}
-      error={!!errorText}
-    />
-  );
-};
+interface Login {
+  email: string;
+  password: string;
+}
 
-export default function LoginForm() {
+const initLogin: Login = {
+  email: '',
+  password: ''
+}
+
+export default function LoginForm(props: any) {
+  const [loginDetails, setLoginDetails] = useState(initLogin);
+  const { changeAuthStatus, changeUserID } = useContext(AuthContext);
+
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const { email, password } = loginDetails;
+    const user = { email, password };
+    const res: any = apiService.login(user);
+    if (res.error) {
+      alert(`${res.message}`);
+      setLoginDetails(initLogin);
+    } else {
+      changeAuthStatus(true);
+      
+    }
+  }
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setLoginDetails((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  }
+
+  const validateForm = () => {
+    return !loginDetails.email || !loginDetails.password;
+  };
+  
   return (
     <div className="form-container">
       <div className="card">
         <h2>Log In</h2>
-        {/* Set Formik form with email and password */}
-        <Formik
-          initialValues={{email:'', password:''}}
-          onSubmit={(data, {setSubmitting}) => {
-            setSubmitting(true);
-            console.log(data);
-            setSubmitting(false);
-          }}
-        >
-          {({ values, handleChange, handleBlur, handleSubmit}) => (
+
           <form onSubmit={handleSubmit}>
-            <Field 
+            <input
               name="email" 
-              type="input" 
-              as={MyTextField}
+              type="text" 
+              value={loginDetails.email}
+              onChange={handleChange}
               placeholder="Email@example.com"
             />
-            <Field
+            <input
               name="password"
               type="password"
-              as={MyTextField}
+              value={loginDetails.password}
+              onChange={handleChange}
               placeholder="Password"
             />
+            <button className="form-submit" type="submit" disabled={validateForm()}>
+              &nbsp;Login&nbsp;
+              <FaArrowRight/>
+            </button>
           </form>
-          )}
-        </Formik>
+
         <br></br>
         <Link to="/register">
           <h4>Sign Up Here</h4>

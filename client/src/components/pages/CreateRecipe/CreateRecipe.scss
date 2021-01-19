@@ -1,0 +1,56 @@
+@import '../../../scss-utils/palette';
+@import '../../../scss-utils/global';
+
+.create-window {
+  top: $nav-height;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  .create-recipe {
+    margin: 5% 0%;
+    width: 90%;
+    max-width: 1000px;
+    min-height: 400px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-width: 1px;
+    border-style: solid;
+    border-color: $p-dark;
+  }
+
+  form {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: inherit;
+    width: 100%;
+    padding: 10% 5%;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $alt-light;
+    padding-right: 10px;
+  }
+
+  input {
+    font-size: 1.1rem;
+    font-family: inherit;
+    color: $p-dark;
+    width: 90%;
+    padding: 30px;
+    margin-right: 30px;
+    background-color: $alt-light;
+    border-style: none;
+  }
+}

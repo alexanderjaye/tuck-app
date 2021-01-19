@@ -72,6 +72,15 @@
     // @include offsetForeground(10px, 10px, $p-green);
     color: $p-light;
   }
+
+  .right-nav-icons {
+    display: flex;
+    justify-content: center;
+  }
+
+  .add-recipe {
+    margin-right: 40px;
+  }
 }
 
 .nav-spacer-util {

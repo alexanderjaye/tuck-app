@@ -1,36 +1,35 @@
-import React, { createContext, useState, useEffect } from 'react'
+import React, { createContext, useState } from 'react'
 
+export const AuthContext = createContext<any>(null);
 
-// export const EventContext = createContext()
+const AuthContextProvider = (props:any) => {
+  // states
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userID, setUserId] = useState('');
 
-// const EventContextProvider = (props) => {
-//   const [events, setEvents] = useState([]);
+  const getAuthStatus = (): boolean => {
+    return isLoggedIn;
+  }
+  
+  const changeAuthStatus = (auth: boolean): void => {
+    setIsLoggedIn(auth);
+  }
 
-//   useEffect(() => {
-//     ApiClient.getEvents()
-//       .then(res => {
-//         console.log(res.data);
-//         setEvents(res.data.sort((a,b) => {
-//           return new Date(b.date).getTime() - new Date(a.date).getTime()
-//         }));
-//       });
-//   }, []);
+  const getUserID = (): string => {
+    return userID;
+  }
 
-//   const postEvent = (event) => {
-//     ApiClient.postEvents(event)
-//       .then(res => {
-//         console.log(res.data);
-//         setEvents((prevEvents) => {
-//           return [...prevEvents, res.data];
-//         });
-//       });
-//   }
+  const changeUserID = (uid: string): void => {
+    setUserId(uid);
+  }
 
-//   return (
-//     <EventContext.Provider value={{ events, postEvent }}>
-//       {props.children}
-//     </EventContext.Provider>
-//   );
-// };
+  return (
+    <AuthContext.Provider 
+      value={{ getAuthStatus, changeAuthStatus, getUserID, changeUserID }}
+    >
+      {props.children}
+    </AuthContext.Provider>
+  );
+};
 
-// export default EventContextProvider;
+export default AuthContextProvider;

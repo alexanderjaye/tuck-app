@@ -1,11 +1,12 @@
-import React from 'react'
-import RecipeList from '../../recipe-list/RecipeList'
+import React from 'react';
+import RecipeList from '../../recipe-list/RecipeList';
+import './Dashboard.scss';
 
 export default function Dashboard() {
   return (
-    <div>
+    <div className="dashboard-container">
       <RecipeList listTitle="Top Recipes"/>
-      <RecipeList listTitle="My Favourites"/> 
+      <RecipeList listTitle="Favourites"/> 
     </div>
   )
 }

@@ -1,20 +1,31 @@
 import './Navbar.scss';
 
-
-import React, { useState } from 'react';
-import { FaBook, FaSearch } from "react-icons/fa";
+import React, { useState, useContext } from 'react';
+import { FaUserCircle, FaSearch, FaPlus } from "react-icons/fa";
 import logo from '../../assets/logo/tuck-logo.svg';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../contexts/Auth';
 
-export default function NavbarTop() {
+
+
+export default function NavbarTop(props: any) {
   const iconSize: number = 32;
-  const [loggedIn] = useState(true);
+  const { getAuthStatus } = useContext(AuthContext);
   const [isSearching, setIsSearching] = useState(false);
 
   const handleSearchClick = (): void => {
     //TODO add x+y check for below code (if low on page && !isSearching, just scroll to top)
     setIsSearching(!isSearching);
-    if (!isSearching) window.scrollTo({ top: 0, behavior: 'smooth'})
+    if (!isSearching) window.scrollTo({ top: 0, behavior: 'smooth'});
+  }
+
+  const handleAddRecipeClick = (e: React.MouseEvent<SVGElement, MouseEvent>): any => {
+    props.history.push('/edit/variant');
+    //alt - return  <Redirect  to="/edit/variant" />
+  }
+
+  const handleProfileClick = (e: React.MouseEvent<SVGElement, MouseEvent>): any => {
+    props.history.push('/profile');
   }
 
   return (
@@ -23,8 +34,9 @@ export default function NavbarTop() {
       <div className="bottom-line"></div>
       <div className="user-img">
         {
-          loggedIn ?
-          <FaBook size={iconSize}/> :
+          getAuthStatus() ?
+          //TODO add link to profile
+          <FaUserCircle size={iconSize} onClick={handleProfileClick}/> :
           null
         }
       </div>
@@ -35,8 +47,19 @@ export default function NavbarTop() {
       </div>
       <div className="search-icon" onClick={handleSearchClick}>
         {
-          loggedIn ?
-          <FaSearch size={iconSize} onClick={handleSearchClick}/> :
+          getAuthStatus() ?
+          
+          <div className="right-nav-icons">
+            <div className="sign-in-container">
+            <Link to="/logout"><button className="sign-in">Logout</button></Link>
+            </div>
+            <div className="add-recipe">
+              <Link to="/create">
+                <FaPlus size={iconSize} onClick={handleAddRecipeClick}/>
+              </Link>
+            </div>
+            <FaSearch size={iconSize}/>
+          </div> :
           <div className="sign-in-container">
             <Link to="/login"><button className="sign-in">Sign In</button></Link>
             <div className="bg-sign-in"></div>

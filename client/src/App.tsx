@@ -7,24 +7,31 @@ import Login from './components/pages/login/Login';
 import FullRecipe from './components/pages/recipe-full/FullRecipe';
 import LandingPage from './components/pages/landing-page/LandingPage';
 
-import bgTree from './assets/backgrounds/lemon-tree.svg';
 import bgVine from './assets/backgrounds/plant-bg-left.svg'
+import EditRecipe from './components/pages/EditRecipe/EditRecipe';
+import CreateRecipe from './components/pages/CreateRecipe/CreateRecipe';
+import AuthContextProvider from './contexts/Auth';
+
 
 function App() {
   const [isLoggedIn] = useState(false);
   return (
     <BrowserRouter>
+      <AuthContextProvider>
       <Navbar/>
-      <div className="main-window">
-        <img className="bg-vine" src={bgVine} alt="Background Vine"></img>
-        <Route exact path="/" 
-          component={ isLoggedIn ? Dashboard : LandingPage}
-        />
-        <Route path="/login" component={Login}/>
-        <Route path="/register" component={Register}/>
-        <Route path="/dashboard" component={Dashboard}/>
-        <Route path="/recipe" component={FullRecipe}/>
-      </div>
+        <div className="main-window">
+          <img className="bg-vine" src={bgVine} alt="Background Vine"></img>
+          <Route exact path="/" 
+            component={ isLoggedIn ? Dashboard : LandingPage}
+          />
+          <Route path="/create" component={CreateRecipe}/>
+          <Route path="/edit" component={EditRecipe}/>
+          <Route path="/login" component={Login}/>
+          <Route path="/register" component={Register}/>
+          <Route path="/dashboard" component={Dashboard}/>
+          <Route path="/recipe" component={FullRecipe}/>
+        </div>
+      </AuthContextProvider>
     </BrowserRouter>
   );
 }

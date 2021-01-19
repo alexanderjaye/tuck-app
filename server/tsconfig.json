@@ -1,7 +1,6 @@
 {
    "compilerOptions": {
       "lib": [
-         "es5",
          "es6",
          "es2017",
          "DOM"
@@ -20,7 +19,7 @@
       "noImplicitThis": true,
       "resolveJsonModule": true,
       "noImplicitAny": false
-   },
+      },
    "exclude": ["node_modules"],
-   "include": ["./src", "src/model/entities/Instructions/.ts"]
+   "include": ["./src", "src/entities/Instructions/.ts"]
 }
