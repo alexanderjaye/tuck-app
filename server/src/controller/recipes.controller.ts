@@ -1,11 +1,11 @@
 import {getRepository, getConnection} from 'typeorm';
 import {Request, Response} from 'express';
 
-import {Recipe} from "../model/Recipes";
+import {Recipe} from "../entities/Recipes";
 
 export class RecipesController {
 
-  private recipeRepository = getConnection().getRepository(Recipe);
+  private recipeRepository = getRepository(Recipe);
 
   public getRecipeTitle (req: Request, res: Response): void {
     const findRecipeByTitle = async (recipeName: string): Promise<Recipe[]> => {

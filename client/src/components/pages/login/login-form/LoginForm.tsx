@@ -24,11 +24,13 @@ export default function LoginForm(props: any) {
     const { email, password } = loginDetails;
     const user = { email, password };
     const res: any = apiService.login(user);
+    console.log(res);
     if (res.error) {
       alert(`${res.message}`);
       setLoginDetails(initLogin);
     } else {
       changeAuthStatus(true);
+      props.history.push('/dashboard');
       
     }
   }

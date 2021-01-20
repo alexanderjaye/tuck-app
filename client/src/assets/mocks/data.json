@@ -1,0 +1,106 @@
+{
+  "users": [
+    {
+      "email": "alexander@jaye.com",
+      "password" : "1234"
+    }
+  ],
+
+  "recipes": [
+    {
+      "recipe_id": 1,
+      "recipeTitle": "Spaghetti Carbonara",
+      "imgURL": "",
+      "variants": [
+        {
+          "_vid": 1, 
+          "variantName": "Alla Veggie",
+          "author": "alexanderjaye",
+          "servings": 2,
+          "blurb": "As made by vegetarians in North Italy",
+          "isVegetarian": true,
+          "isVegan": true,
+          "isGlutenFree": false,
+          "likes": 50,
+          "instructions": [
+            {
+              "instruction_num": 1,
+              "instruction_type": "preparation",
+              "instruction": ""
+            },
+            {
+              "instruction_num": 1,
+              "instruction_type": "preparation",
+              "instruction": ""
+            },
+            {
+              "instruction_num": 1,
+              "instruction_type": "preparation",
+              "instruction": ""
+            },
+            {
+              "instruction_num": 1,
+              "instruction_type": "preparation",
+              "instruction": ""
+            },
+            {
+              "instruction_num": 1,
+              "instruction_type": "preparation",
+              "instruction": ""
+            }
+          ],
+          "ingredients": [
+            {
+              "ingredientName": "",
+              "ingredientType": "",
+              "measurementType": "",
+              "measurementAmount": ""
+            },
+            {
+              "ingredientName": "",
+              "ingredientType": "",
+              "measurementType": "",
+              "measurementAmount": ""
+            },
+            {
+              "ingredientName": "",
+              "ingredientType": "",
+              "measurementType": "",
+              "measurementAmount": ""
+            },
+            {
+              "ingredientName": "",
+              "ingredientType": "",
+              "measurementType": "",
+              "measurementAmount": ""
+            },
+            {
+              "ingredientName": "",
+              "ingredientType": "",
+              "measurementType": "",
+              "measurementAmount": ""
+            },
+            {
+              "ingredientName": "",
+              "ingredientType": "",
+              "measurementType": "",
+              "measurementAmount": ""
+            },
+            {
+              "ingredientName": "",
+              "ingredientType": "",
+              "measurementType": "",
+              "measurementAmount": ""
+            },
+            {
+              "ingredientName": "",
+              "ingredientType": "",
+              "measurementType": "",
+              "measurementAmount": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

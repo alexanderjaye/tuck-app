@@ -3,8 +3,99 @@
 
 .edit-window {
   padding: 20px 5%;
+  color: $p-light;
+
+  .edit-form {
+    margin: 5%;
+    padding: 5%;
+    background-color: $p-slate-grey;
+  }
+
+  .fixed-fields {
+    margin-bottom: 40px;
+  }
+
+  .variation-fields {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+
+    .container {
+      display: flex;
+      align-items: center;
+      
+      input {
+        flex-grow: 1;
+      }
+    }
+  }
+
+  .dietary-choices {
+    display: flex;
+    
+    align-items: center;
+    margin-bottom: 30px;
+  }
   
   h1 {
     margin-top: 5px;
+    background-color: $p-light;
+    color: $p-slate-grey;
+    padding: 5px;
+  }
+
+  .ingredients-edit {
+    margin-bottom: 40px;
+  }
+
+  form {
+
+    input {
+      margin: 10px;
+      border-style: none;
+      background-color: $alt-light;
+      padding: 8px;
+    }
+
+    select {
+      margin: 10px;
+      border-style: none;
+      background-color: $p-light;
+      padding: 8px;
+    }
+  }
+
+  .form-submit {
+    margin-top: 30px;
+    border-style: none;
+    font-family: inherit;
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 10px 18px;
+    background-color: $p-green;
+    // @include offsetForeground(10px, 10px, $p-green);
+    color: $p-light;
+  }
+
+  .plus-sign {
+    margin-left: 10px;
+  }
+
+  .instruct-container {
+    display: flex;
+    align-items: centre;
+
+    input {
+      width: 90%;
+    }
+  }
+
+  .ingredients-row {
+    display: flex;
+    align-items: center;
+    input {
+      flex-grow: 1;
+    }
   }
 }

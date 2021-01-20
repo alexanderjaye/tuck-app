@@ -3,7 +3,7 @@ import './Navbar.scss';
 import React, { useState, useContext } from 'react';
 import { FaUserCircle, FaSearch, FaPlus } from "react-icons/fa";
 import logo from '../../assets/logo/tuck-logo.svg';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { AuthContext } from '../../contexts/Auth';
 
 
@@ -12,6 +12,7 @@ export default function NavbarTop(props: any) {
   const iconSize: number = 32;
   const { getAuthStatus } = useContext(AuthContext);
   const [isSearching, setIsSearching] = useState(false);
+  const history = useHistory();
 
   const handleSearchClick = (): void => {
     //TODO add x+y check for below code (if low on page && !isSearching, just scroll to top)
@@ -20,12 +21,12 @@ export default function NavbarTop(props: any) {
   }
 
   const handleAddRecipeClick = (e: React.MouseEvent<SVGElement, MouseEvent>): any => {
-    props.history.push('/edit/variant');
+    history.push('/edit/variant');
     //alt - return  <Redirect  to="/edit/variant" />
   }
 
   const handleProfileClick = (e: React.MouseEvent<SVGElement, MouseEvent>): any => {
-    props.history.push('/profile');
+    history.push('/profile');
   }
 
   return (
@@ -45,20 +46,17 @@ export default function NavbarTop(props: any) {
         <h3 className="tag one">Open Source Recipes.</h3>
         <h3 className="tag two">No More Leftovers.</h3>
       </div>
-      <div className="search-icon" onClick={handleSearchClick}>
+      <div className="search-icon">
         {
           getAuthStatus() ?
           
           <div className="right-nav-icons">
-            <div className="sign-in-container">
-            <Link to="/logout"><button className="sign-in">Logout</button></Link>
-            </div>
             <div className="add-recipe">
               <Link to="/create">
                 <FaPlus size={iconSize} onClick={handleAddRecipeClick}/>
               </Link>
             </div>
-            <FaSearch size={iconSize}/>
+            <FaSearch size={iconSize} onClick={handleSearchClick}/>
           </div> :
           <div className="sign-in-container">
             <Link to="/login"><button className="sign-in">Sign In</button></Link>

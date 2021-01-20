@@ -1,11 +1,11 @@
 import {getRepository, getConnection} from "typeorm";
 import {Request, Response} from "express";
 
-import {Favourite} from "../model/Favourites";
+import {Favourite} from "../entities/Favourites";
 
 export class FavouritesController {
 
-  private favouritesRepository = getConnection().getRepository(Favourite);
+  private favouritesRepository = getRepository(Favourite);
 
   /**GET**/
   getFavouritesByUser(req: Request, res: Response): void {

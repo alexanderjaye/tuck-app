@@ -2,13 +2,13 @@
    "type": "postgres",
    "host": "localhost",
    "port": 5432,
-   "username": "postgres",
+   "username": "alexhall",
    "password": "",
    "database": "tuck",
    "synchronize": true,
    "logging": false,
    "entities": [
-      "src/model/**/*.ts"
+      "src/entities/*.ts"
    ],
    "migrations": [
       "src/migration/**/*.ts"
@@ -17,7 +17,7 @@
       "src/subscriber/**/*.ts"
    ],
    "cli": {
-      "entitiesDir": "src/entity",
+      "entitiesDir": "src/model",
       "migrationsDir": "src/migration",
       "subscribersDir": "src/subscriber"
    }

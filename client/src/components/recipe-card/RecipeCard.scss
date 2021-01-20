@@ -7,8 +7,9 @@
   border-color: $p-dark;
   box-shadow: -5px -5px $p-lemon;
   margin: 20px;
+  background-color: $alt-light;
 
-  &:nth-child(2) {
+  &:nth-child(2n) {
     box-shadow: -8px -8px $p-green;
   }
 
@@ -20,7 +21,16 @@
   .info {
     background-color: $alt-light;
     padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
+
+  .title {
+    color: $p-green;
+    font-size: 1rem;
+  }
+
 
   h3 {
     margin: 0;

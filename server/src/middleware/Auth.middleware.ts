@@ -1,7 +1,7 @@
 import { Request, Response, Next } from 'express'
 import { getRepository, getConnection } from 'typeorm';
 
-import { User } from '../model/User';
+import { User } from '../entities/User';
 
 const authMiddleware = async (req: Request, res: Response, next: Next): Promise<any> => {
 

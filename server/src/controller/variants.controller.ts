@@ -1,10 +1,10 @@
 import {getRepository, DeleteResult, getConnection} from "typeorm";
 import {Request, Response} from "express";
-import { Variant } from "../model/Variants";
+import { Variant } from "../entities/Variants";
 
 export class VariantsController {
 
-  private variantRepository = getConnection().getRepository(Variant);
+  private variantRepository = getRepository(Variant);
 
   
   public getVariantsByRecipeTitle (req: Request, res: Response): void {

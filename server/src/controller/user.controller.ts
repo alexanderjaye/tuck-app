@@ -1,12 +1,12 @@
 import { DeleteResult, getRepository, getConnection } from "typeorm";
 import { Request, Response } from "express";
-import { User } from "../model/User";
+import { User } from "../entities/User";
 import { bcrypt } from "bcrypt";
 import validator from 'validator';
 
 export class UserController {
 
-  private userRepository = getConnection().getRepository(User);
+  private userRepository = getRepository(User);
 
   getUser (req: Request, res: Response): void {
     const findUser = async (email: string): Promise<User[]> => {
@@ -18,6 +18,7 @@ export class UserController {
     }
 
     try {
+      console.log(req.body);
       const { email, password } = req.body;
       if (!(validator.isEmail(email))) throw new Error('invalid password')
       const user = findUser(email)[0];
@@ -33,34 +34,18 @@ export class UserController {
   }
 
   async registerUser (req: Request, res: Response): Promise<any> {
-    const { email, password, username } = req.body;
-    if (!validator.isEmail(email)) throw new Error('invalid password')
-    const user = await this.userRepository.findOne({ email: email });
-    if (user) {
-      return res
-        .status(409)
-        .send({ error: '409', message: 'User already exists' });
-    }
-    const namecheck = await this.userRepository.findOne({ username: username })
-    if (namecheck) {
-      return res
-        .status(409)
-        .send({ error: '409', message: 'Username already taken' });
-    }
-    try {
-      if (password === '') throw new Error();
-      const hash = await bcrypt.hash(password, 10);
-      const newUser = new User();
-      newUser.email = email;
-      newUser.username = username;
-      newUser.password = hash;
-      
-      const savedUser: User = await this.userRepository.save(newUser);
-      req.session.uid = savedUser._uid;
-      res.status(201).send(user);
-    } catch (error) {
-      res.status(400).send({ error, message: 'Could not create user' });
-    }
+    // const hashFunc = async (passphrase: string):Promise<string> => {
+    //   return await bcrypt.hash(passphrase, 10);
+    // }
+    // const { email, password, username } = req.body;
+    // const hash = hashFunc(password);
+    // const newUser: any = {};
+    // newUser.email = email;
+    // newUser.username = username;
+    // newUser.password = hash;
+    
+    return await this.userRepository.save(req.body);
+    
   }
 
   async updateUser (req: Request, res: Response): Promise<any> {

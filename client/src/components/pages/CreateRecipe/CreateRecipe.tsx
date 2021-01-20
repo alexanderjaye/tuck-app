@@ -2,13 +2,18 @@ import React, { useState } from 'react'
 import { FaArrowRight } from 'react-icons/fa';
 import './CreateRecipe.scss'
 
-const CreateRecipe = () => {
+const CreateRecipe = (props: any) => {
   const [isOriginal, setIsOriginal] = useState(true);
+  
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    props.history.push('/edit')
+  } 
 
   return (
     <div className="create-window">
       <div className="create-recipe">
-        <form>
+        <form onSubmit={handleSubmit}>
           <h2>Create Recipe Title</h2>
           <p>A general title.</p>
           <div className="input-container">
