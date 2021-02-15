@@ -3,8 +3,6 @@ Tuck - a Full Stack, fully responsive web app for open source community recipes,
 
 Designed by Alexander Hall - [Github](https://github.com/alexanderjshall) - [LinkedIn](https://www.linkedin.com/in/alexanderjshall/)
 
-[toc]
-
 ## Getting Started
 
 1. In both the client directory & the server directory, run `npm install`.
